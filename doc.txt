@@ -1,0 +1,24 @@
+Required libraries:
+	numpy
+	pandas
+	sklearn
+	SpaCy
+	Pyspellchecker
+	Tensorflow
+	
+Manuel:
+	Script script.sh to prepare data files.
+	
+	Scripts (python)
+		0) step0.py : prepare data files (with spell and correction or not)
+		1) step1.py : visualize or study data
+		2) step2.py : preprocessing of data to prepare objects for classification
+		3) step3.py : algorithm comparison for classification
+		
+References:
+	LRCN : https://machinelearningmastery.com/cnn-long-short-term-memory-networks/
+
+	LSTM: https://machinelearningmastery.com/how-to-develop-lstm-models-for-time-series-forecasting/
+	
+	EMBEDDING : https://www.tensorflow.org/text/tutorials/text_classification_rnn
+		    https://machinelearningmastery.com/use-word-embedding-layers-deep-learning-keras/
