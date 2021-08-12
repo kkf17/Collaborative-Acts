@@ -45,7 +45,7 @@ class LSTm(object):
 		model = load_model('./lstm_model')
 	
 		#model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
-		model.fit(X_train, y_train, epochs=60, batch_size=10, verbose=0,shuffle=True)#, class_weight=weights) 
+		model.fit(X_train, y_train, epochs=40, batch_size=10, verbose=0,shuffle=True)#, class_weight=weights) 
 		
 		model.save('./lstm_model')
 

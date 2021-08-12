@@ -30,7 +30,7 @@ class LRCN(object):
 		self.n_features = features #X_train.shape[1]
 		self.n_seq = 1
 		
-		hidden_nodes = 20#95 
+		hidden_nodes = 500#95 
 		model = Sequential()
 		
 		model.add(TimeDistributed(Conv1D(filters=8, kernel_size=1, activation='relu'), input_shape=(None, self.n_steps, self.n_features)))

@@ -19,6 +19,7 @@
 				# s : remove stop words
 				# l : lemmatization
 			# -g : grammar selection
+					#f. ex : 'DET CONJ SYM'
 					#(see preprocessing files for much details)
 			# -n : number of most predictive words (for vectorization) - useless- 
 			# -v : type of vectorization

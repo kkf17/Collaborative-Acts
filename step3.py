@@ -4,7 +4,7 @@
 		-r : folder (./objects/) or set of folders
 		-t : number of folds for test (n) or set of numbers of folds (min max)
 		-a : chosen algorithm for classification or set of algorithms to test
-				(lrn, lstm, lstmsteps)
+				(lrcn, lstm, lstmsteps)
 -------------------------------------------------------------------------------"""
 import pickle
 import sys

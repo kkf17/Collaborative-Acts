@@ -52,6 +52,7 @@ def foldclass(vectors, labels, n_test=1, algo='lstm', param=None):
 		
 			X_train=vectors[fold]
 			y_train=labels[fold]
+			print('TRAIN :', X_train.shape, y_train.shape)
 			
 			mod.train(X_train, y_train, param)
 
@@ -59,6 +60,8 @@ def foldclass(vectors, labels, n_test=1, algo='lstm', param=None):
 		
 			X_test=vectors[fold]
 			y_test=labels[fold]
+			
+			print('TEST:', X_test.shape, y_test.shape)
 			
 			y_pred = mod.test(X_test, y_test)
 			acc, kappa = mod.metrics(y_test, y_pred)

@@ -12,8 +12,6 @@ import random
 import pandas as pd
 import numpy as np
 
-from sklearn.model_selection import ShuffleSplit
-
 import model
 import embedding
 
@@ -25,10 +23,9 @@ if '-f' in args:
 	rep = args[args.index('-f')+1]
 	n_args+=2
 	
-#rep=[]
-n_test=14#[2,3,4,10,11]
+
+n_test= 17
 algo='lrcn'
-#params = [20]
 
 	
 txt= rep+'data.txt'
@@ -48,6 +45,29 @@ for i in range(len(DYADS)):
 	utterances.append(DYADS[i].utterances)
 	vectors.append(DYADS[i].vectors)
 	labels.append(DYADS[i].labels)
+	
+
+regular = True	
+if regular:
+	utterances=np.concatenate(utterances, axis=0)	
+	vectors=np.concatenate(vectors, axis=0)
+	labels=np.concatenate(labels, axis=0)
+	
+	index = np.where(np.unique(utterances))
+	utterances = utterances[index]
+	vectors = vectors[index]
+	labels = labels[index]
+
+	index=np.array_split(range(vectors.shape[0]),24) #18
+
+	X=[]
+	y=[]
+	for i in index:
+		X.append(utterances[i])
+		y.append(labels[i])
+		
+	utterances = X
+	labels = y
 	
 
 
@@ -81,13 +101,13 @@ for n_fold in range(10):#range(SIZE-n_test):
 		y_test=labels[fold]
 			
 		y_pred = mod.test(X_test, y_test)
-		acc, kappa = mod.metrics(y_test, y_pred)
+		#acc, kappa = mod.metrics(y_test, y_pred)
 			
-		print(fold, ': ', acc, kappa)
+		#print(fold, ': ', acc, kappa)
 			
 		folds.append(fold)
-		accs.append(acc)
-		kappas.append(kappa)
+		#accs.append(acc)
+		#kappas.append(kappa)
 	
 	
 

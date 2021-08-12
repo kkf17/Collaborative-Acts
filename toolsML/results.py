@@ -58,12 +58,12 @@ def case_test(rep, ntest, algo, param=None):
 		vectors=np.concatenate(vectors, axis=0)
 		labels=np.concatenate(labels, axis=0)
 	
-		index = np.where(np.unique(utterances))
+		"""index = np.where(np.unique(utterances))
 		utterances = utterances[index]
 		vectors = vectors[index]
-		labels = labels[index]
+		labels = labels[index]"""
 
-		index=np.array_split(range(vectors.shape[0]),24) #18
+		index=np.array_split(range(vectors.shape[0]),24) #18 #28
 
 		X=[]
 		y=[]

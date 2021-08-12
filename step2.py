@@ -12,6 +12,8 @@
 		-m : most predictive words
 			number of most predictive words
 		-v : type of vectorization
+			bow : bag of words
+			bowt : bag of words with TFIDF ponderation
 			ww : word vector
 			wm : mean of word vectors
 			wwt : word vectors with TFIDF ponderation

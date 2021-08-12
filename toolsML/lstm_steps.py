@@ -41,9 +41,9 @@ class LSTMSteps(object):
 		hidden_nodes = 20#95 
 		model = Sequential()
 		model.add(LSTM(hidden_nodes,return_sequences=True, input_shape=(self.n_steps, self.n_features), name='Layer1')) #return_sequences=True
-		model.add(Dropout(0.2))
+		model.add(Dropout(0.25))
 		model.add(LSTM(hidden_nodes, name='Layer2'))
-		model.add(Dropout(0.2))
+		model.add(Dropout(0.25))
 
 		model.add(Dense(8, activation='softmax', name='Dense1'))
 		model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])

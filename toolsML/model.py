@@ -51,7 +51,8 @@ class Model(object):
 
 	
 	def weights(self, y):
-		return compute_class_weight('balanced', np.unique(y), y)
+		w=compute_class_weight('balanced', np.unique(y), y)
+		return dict(zip( np.unique(y),w))
 		
 	
 

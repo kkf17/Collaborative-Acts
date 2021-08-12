@@ -15,6 +15,21 @@ Manuel:
 		2) step2.py : preprocessing of data to prepare objects for classification
 		3) step3.py : algorithm comparison for classification
 		
+	User guide:
+		1) Create data set in .csv files for each data set with
+			run ./script.sh -m 0 
+			or ./script.sh -m 0 -c 1 (for spell and correction)
+		2) Create ./object folder in your repository
+		3) Create objects for classification running 
+				./script.sh -m 2 [OPT]
+					(see script.sh for much details)
+		4) Test algorithm for classification running step3.py
+				f.ex: python3 step3.py -r ./objects/data_c0_unp_ADPPROPNSYM_0_ww/ -t 11 -a lrcn
+				
+				      python3 step3.py -r ./objects/data_c0_unp_ADPPROPNSYM_0_ww/ ./objects/data_c0_ww/ -t 11 -a lrcn
+				      python3 step3.py -r ./objects/data_c0_unp_ADPPROPNSYM_0_ww/ -t 3 11 -a lrcn
+				      python3 step3.py -r ./objects/data_c0_unp_ADPPROPNSYM_0_ww/ -t 11 -a lstm lrcn
+		
 References:
 	LRCN : https://machinelearningmastery.com/cnn-long-short-term-memory-networks/
 
